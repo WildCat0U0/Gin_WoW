@@ -95,12 +95,13 @@ func initMySqlGorm() *gorm.DB {
 		DontSupportRenameColumn:   true,  // 用 change 修改列名，MySQL 不支持重命名列
 		SkipInitializeWithVersion: false, // 根据版本自动配置
 	}
+
 	if db, err := gorm.Open(mysql.New(mysqlConfig), &gorm.Config{
 		DisableForeignKeyConstraintWhenMigrating: true,            // 禁用外键约束以便于自动迁移
 		Logger:                                   getGormLogger(), // 使用默认 logger，显示详细信息
 		//什么是外键约束？外键约束是用来保证数据的完整性，外键约束可以保证数据的一致性，防止数据不一致
 	}); err != nil {
-		global.App.Log.Error("MySQL启动异常", zap.Any("err", err))
+		//global.App.Log.Error("MySQL启动异常", zap.Any("err", err))
 		//zap.any 用于将任意类型的字段添加到日志中
 		return nil
 	} else {
@@ -121,7 +122,7 @@ func initMySqlTables(db *gorm.DB) {
 		models.User{},
 	)
 	if err != nil {
-		global.App.Log.Error("register table failed", zap.Any("err", err))
+		global.App.Log.Error("migrate table failed", zap.Any("err", err))
 		os.Exit(0)
 	}
 }

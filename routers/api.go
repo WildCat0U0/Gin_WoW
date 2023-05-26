@@ -2,6 +2,7 @@ package routers
 
 import (
 	"Gin_Start/app/common/request"
+	"Gin_Start/app/controllers/app"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"
@@ -47,4 +48,6 @@ func SetApiGroupRouters(router *gin.RouterGroup) {
 			"message": "success",
 		})
 	})
+
+	router.POST("/auth/register", app.Register)
 }
