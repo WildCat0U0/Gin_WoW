@@ -16,3 +16,21 @@ func ValidateMobile(fl validator.FieldLevel) bool {
 	}
 	return false
 }
+
+func ValidatePassword(fl validator.FieldLevel) bool {
+	password := fl.Field().String()
+	ok, _ := regexp.MatchString(`^[a-zA-Z0-9]{6,16}$`, password) //正则验证密码
+	if ok {
+		return ok
+	}
+	return false
+}
+
+func ValidateEmail(fl validator.FieldLevel) bool {
+	email := fl.Field().String()
+	ok, _ := regexp.MatchString(`^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$`, email)
+	if ok {
+		return ok
+	}
+	return false
+}

@@ -11,6 +11,7 @@ type Register struct {
 	Name     string `json:"name" binding:"required,min=2,max=20" form:"name"`
 	Password string `json:"password" binding:"required,min=6,max=20" form:"password"`
 	Mobile   string `json:"mobile" binding:"required,mobile,min=11,max=11" form:"mobile"` // binding:"required" 表示必填字段
+	Email    string `json:"email" binding:"required,email" form:"email"`                  // binding:"required" 表示必填字段
 }
 
 func (register Register) GetMessages() validatorMessages {
@@ -25,5 +26,8 @@ func (register Register) GetMessages() validatorMessages {
 		"mobile.min":        "手机号长度不能小于11",
 		"mobile.max":        "手机号长度不能大于11",
 		"mobile.mobile":     "手机号格式不正确",
+		"email.required":    "邮箱不能为空",
+		"email.email":       "邮箱格式不正确",
+		"password.password": "密码必须包含数字和字母",
 	}
 }
