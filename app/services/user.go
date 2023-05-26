@@ -42,3 +42,16 @@ func (userService *userService) Register(params request.Register) (err error, us
 	err = global.App.DB.Create(&user).Error
 	return
 }
+
+func (userService *userService) Login(params request.Login) (err error, user models.User) {
+	var result = global.App.DB.Where("mobile = ?", params.Mobile).First(&user)
+	if result.RowsAffected == 0 {
+		err = errors.New("用户不存在")
+		return
+	}
+	if !utils.BcryptMakeCheck([]byte(params.Password), user.Password) {
+		err = errors.New("密码错误")
+		return
+	}
+	return
+}

@@ -57,3 +57,9 @@
 {"level":"local.info","ts":"[2023-05-26 13:05:27.377]","caller":"Gin_Start/main.go:17","msg":"数据库初始化成功"}
 {"level":"local.info","ts":"[2023-05-26 13:06:15.033]","caller":"Gin_Start/main.go:13","msg":"日志初始化成功"}
 {"level":"local.info","ts":"[2023-05-26 13:06:15.053]","caller":"Gin_Start/main.go:17","msg":"数据库初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 15:54:06.530]","caller":"Gin_Start/main.go:13","msg":"日志初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 15:54:06.579]","caller":"Gin_Start/main.go:17","msg":"数据库初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 17:17:07.135]","caller":"Gin_Start/main.go:13","msg":"日志初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 17:17:07.160]","caller":"Gin_Start/main.go:17","msg":"数据库初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 17:17:27.941]","caller":"Gin_Start/main.go:13","msg":"日志初始化成功"}
+{"level":"local.info","ts":"[2023-05-26 17:17:27.967]","caller":"Gin_Start/main.go:17","msg":"数据库初始化成功"}

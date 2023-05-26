@@ -50,4 +50,5 @@ func SetApiGroupRouters(router *gin.RouterGroup) {
 	})
 
 	router.POST("/auth/register", app.Register)
+	router.POST("/auth/login", app.Login)
 }

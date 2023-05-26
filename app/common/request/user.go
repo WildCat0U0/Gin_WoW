@@ -31,3 +31,16 @@ func (register Register) GetMessages() validatorMessages {
 		"password.password": "密码必须包含数字和字母",
 	}
 }
+
+type Login struct {
+	Mobile   string `json:"mobile" binding:"required,mobile,min=11,max=11" form:"mobile"` // binding:"required" 表示必填字段
+	Password string `json:"password" binding:"required,min=6,max=20" form:"password"`
+}
+
+func (Login Login) GetMessages() validatorMessages {
+	return validatorMessages{
+		"mobile.required":   "手机号不能为空",
+		"mobile.mobile":     "手机号格式不正确",
+		"password.required": "密码不能为空",
+	}
+}
