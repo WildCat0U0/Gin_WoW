@@ -1084,3 +1084,12 @@
 
 2023/05/26 13:06:15 C:/Users/pan WIldcat/GolandProjects/Gin_Start/bootstrap/db.go:121
 [0.504ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'go-test' AND table_name = 'users' AND index_name = 'idx_users_deleted_at'
+
+2023/05/26 13:06:18 C:/Users/pan WIldcat/GolandProjects/Gin_Start/app/services/user.go:36
+[0.331ms] [rows:1] SELECT `id` FROM `users` WHERE mobile = '17783073951' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1
+
+2023/05/26 13:06:33 C:/Users/pan WIldcat/GolandProjects/Gin_Start/app/services/user.go:36 record not found
+[1.181ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '17783073950' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1
+
+2023/05/26 13:06:33 C:/Users/pan WIldcat/GolandProjects/Gin_Start/app/services/user.go:42
+[2.191ms] [rows:1] INSERT INTO `users` (`name`,`password`,`mobile`,`created_at`,`updated_at`,`deleted_at`) VALUES ('李四','$2a$04$kJryhc4z5cvAOuhB/LfbrO1i0BdFjIbj7YY3ROtMMKPnLdL6nQfVG','17783073950','2023-05-26 13:06:33.143','2023-05-26 13:06:33.143',NULL)

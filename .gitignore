@@ -1,2 +1,4 @@
 .idea
 .gitignore
+storage/logs/app.log
+storage/logs/sql.log
